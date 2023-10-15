@@ -1,0 +1,31 @@
+\documentclass[12pt,numbers=enddot]{scrartcl}
+
+\input{template/preamble.tex}
+
+\def\projectTitle{Darbo pavadinimas}
+\def\projectType{Ataskaitos tipas}
+\addentry{Jonas Biliūnas}{jonas.biliunas@mif.stud.vu.lt}
+\addentry{Antanas Škėma}{antanas.skema@mif.stud.vu.lt}
+\def\lecturer{Dr. Balys Sruoga}
+\def\projectYear{2023}
+
+\begin{document}
+
+\printtitlepage
+
+\tableofcontents
+
+\input{examples.tex}
+
+\begin{lstlisting}[style=ISI_code]
+    #include <iostream>
+    
+    int main() {
+        std::cout << "Hello, World!" << std::endl;
+        return 0;
+    }
+\end{lstlisting}
+
+\printbibliography
+
+\end{document}

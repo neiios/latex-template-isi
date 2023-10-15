@@ -1,0 +1,47 @@
+\section{Title}
+\subsection{Subtitle}
+\subsubsection{Subsubtile}
+
+Čia yra \enquote{Lietuviškas} tekstas \cite{Badr_2019}. Žiūrėti \ref{fig:excorr}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{images/corr-norm.png}
+	\caption{Koreliacijos}
+	\label{fig:excorr}
+\end{figure}
+
+\subsubsection{A table}
+
+Some text \ref{tab:example-table}
+
+\begin{table}[H]
+	\centering
+	\caption{Idomi lentelė.}
+	\label{tab:example-table}
+	\begin{tabular}{@{}lccccccc@{}}
+		\toprule
+		0  & 2  & -3 & 0  & -5 & 0 & 0 & long long item \\ \midrule
+		8  & -1 & 1  & -1 & -1 & 1 & 0 & 0              \\
+		10 & 2  & 4  & 0  & 0  & 0 & 1 & 0              \\
+		3  & 0  & 0  & 1  & 1  & 0 & 0 & 1              \\ \bottomrule
+	\end{tabular}
+\end{table}
+
+Prieš atliekant praleistų reikšmių užpildymą (angl. imputation), buvo atliktas įvairių užpildymo būdų palyginimas.
+
+\begin{table}[H]
+	\centering
+	\caption{Varacijos keitimas priklausomai nuo užpildymo metodo}
+	\label{tab:dt-pre-analysis-2}
+	\begin{tabular}{lcccc}
+		\toprule
+		Dispersija       & Employees & Revenue                     & Expenses                    & Growth   \\
+		\midrule
+		Pradinė          & 159660.7  & \(1.019492 \times 10^{13}\) & \(4.479247 \times 10^{12}\) & 47.4257  \\
+		Po užp. vidurkiu & 158401.8  & \(1.01543 \times 10^{13}\)  & \(4.430375 \times 10^{12}\) & 47.26008 \\
+		Po užp. mediana  & 158449.7  & \(1.015508 \times 10^{13}\) & \(4.432334 \times 10^{12}\) & 47.26295 \\
+		Po užp. moda     & 158491.4  & NA                          & NA                          & 47.24718 \\
+		\bottomrule
+	\end{tabular}
+\end{table}

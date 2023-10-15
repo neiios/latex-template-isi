@@ -1,0 +1,117 @@
+\usepackage{microtype}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	top=1.8cm,
+	right=1.8cm,
+	bottom=1.8cm,
+	left=2.8cm,
+	footskip=20pt
+}
+\usepackage{setspace}
+\setstretch{1.2}
+
+\usepackage{fontspec}
+\usepackage[lithuanian]{babel}
+\setmainfont{Times New Roman}
+\setsansfont{Arial}
+\setmonofont{Courier New}
+
+\usepackage{multirow}
+
+\usepackage{etoolbox}
+\newcommand{\entries}{}
+\newcommand{\addentry}[2]{\listadd{\entrylist}{Atliko: #1\\ VU el. p.: #2\\[0.5cm]}}
+\newcommand{\processentry}[1]{#1}
+\newcommand{\printentries}{
+	\begin{tabular}{@{}l@{}}
+		\forlistloop{\processentry}{\entrylist}
+		Vertino: \lecturer
+	\end{tabular}
+}
+
+\usepackage{csquotes}
+\DeclareQuoteAlias{german}{lithuanian}
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\usepackage{float}
+\usepackage{caption}
+
+\usepackage{chngcntr}
+% numeration
+\counterwithin{figure}{section}
+\renewcommand\thefigure{\arabic{section}.\arabic{figure} pav.}
+\captionsetup[figure]{labelfont=default,labelsep=none,name=}
+
+\usepackage{booktabs}
+\counterwithin{table}{section}
+\renewcommand\thetable{\arabic{section}.\arabic{table} lentelė.}
+\captionsetup[table]{labelfont=default,labelsep=none,name=}
+
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{1cm}
+\usepackage{indentfirst}
+
+\newcommand{\printtitlepage}{
+	\begin{titlepage}
+		\sffamily % font like template but looks atrocious
+		\begin{center}
+			\includegraphics[width=2.5cm]{template/mif-logo}
+			\vspace{0.5cm}
+
+			VILNIAUS UNIVERSITETAS\\
+			MATEMATIKOS IR INFORMATIKOS FAKULTETAS\\
+			INFORMACINIŲ SISTEMŲ INŽINERIJOS STUDIJŲ PROGRAMA\\
+			\vspace{3cm}
+			\vfill
+
+			{\large\textbf{\projectTitle}}
+			\vspace{0.5cm}
+
+			\projectType
+			\vfill
+
+			\hfill
+			{\small\printentries}
+			\vfill
+
+			{\small
+				Vilnius\\
+				\projectYear}
+		\end{center}
+	\end{titlepage}
+}
+
+\RedeclareSectionCommand[
+	afterskip=12pt,
+	font=\fontsize{14pt}{17pt}\selectfont\bfseries\MakeUppercase
+]{section}
+
+\RedeclareSectionCommand[
+	beforeskip=12pt,
+	afterskip=6pt,
+	font=\fontsize{14pt}{17pt}\selectfont\bfseries
+]{subsection}
+
+\RedeclareSectionCommand[
+	beforeskip=12pt,
+	afterskip=6pt,
+	font=\fontsize{12pt}{14.5pt}\selectfont\bfseries
+]{subsubsection}
+
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
+\usepackage{listings}
+
+\lstdefinestyle{ISI_code}{
+	basicstyle=\fontsize{9pt}{11pt}\selectfont\ttfamily,
+	breaklines=true,
+	keepspaces=true,
+	tabsize=4,
+	showstringspaces=false,
+}
