@@ -1,6 +1,6 @@
 \documentclass[12pt,numbers=enddot]{scrartcl}
 
-\input{template/preamble.tex}
+\input{preamble.tex}
 
 \def\projectTitle{Darbo pavadinimas}
 \def\projectType{Ataskaitos tipas}
@@ -15,16 +15,8 @@
 
 \tableofcontents
 
+% remove this
 \input{examples.tex}
-
-\begin{lstlisting}[style=ISI_code]
-    #include <iostream>
-    
-    int main() {
-        std::cout << "Hello, World!" << std::endl;
-        return 0;
-    }
-\end{lstlisting}
 
 \printbibliography
 

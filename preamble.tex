@@ -17,8 +17,17 @@
 \setmainfont{Times New Roman}
 \setsansfont{Arial}
 \setmonofont{Courier New}
+% \setmonofont{Source Code Pro}
 
 \usepackage{multirow}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{subcaption}
+
+\usepackage{array}
+
+\usepackage{amsmath, amssymb}
 
 \usepackage{etoolbox}
 \newcommand{\entries}{}
@@ -31,8 +40,6 @@
 	\end{tabular}
 }
 
-\usepackage{csquotes}
-\DeclareQuoteAlias{german}{lithuanian}
 \usepackage[style=ieee,backend=biber]{biblatex}
 \addbibresource{bibliography.bib}
 
@@ -41,26 +48,39 @@
 \usepackage{float}
 \usepackage{caption}
 
+\usepackage[newfloat]{minted}
+\usemintedstyle{emacs}
+\captionsetup[listing]{labelfont=default,labelsep=space}
+\SetupFloatingEnvironment{listing}{name=Išeities kodas}
+
+% just like the template but looks atrocious
+% \usepackage{listings}
+% \lstdefinestyle{ISI_code}{
+% 	basicstyle=\fontsize{9pt}{11pt}\selectfont\ttfamily,
+% 	breaklines=true,
+% 	keepspaces=true,
+% 	tabsize=4,
+% 	showstringspaces=false,
+% }
+
 \usepackage{chngcntr}
 % numeration
 \counterwithin{figure}{section}
-\renewcommand\thefigure{\arabic{section}.\arabic{figure} pav.}
-\captionsetup[figure]{labelfont=default,labelsep=none,name=}
+\captionsetup[figure]{labelfont=default,labelsep=space}
 
 \usepackage{booktabs}
 \counterwithin{table}{section}
-\renewcommand\thetable{\arabic{section}.\arabic{table} lentelė.}
-\captionsetup[table]{labelfont=default,labelsep=none,name=}
+\captionsetup[table]{labelfont=default,labelsep=period}
 
-\setlength{\parskip}{3pt}
-\setlength{\parindent}{1cm}
-\usepackage{indentfirst}
+% \setlength{\parskip}{3pt}
+% \setlength{\parindent}{1cm}
+% \usepackage{indentfirst
 
 \newcommand{\printtitlepage}{
 	\begin{titlepage}
 		\sffamily % font like template but looks atrocious
 		\begin{center}
-			\includegraphics[width=2.5cm]{template/mif-logo}
+			\includegraphics[width=2.5cm]{images/mif-logo}
 			\vspace{0.5cm}
 
 			VILNIAUS UNIVERSITETAS\\
@@ -88,7 +108,7 @@
 
 \RedeclareSectionCommand[
 	afterskip=12pt,
-	font=\fontsize{14pt}{17pt}\selectfont\bfseries\MakeUppercase
+	font=\fontsize{14pt}{17pt}\selectfont\bfseries
 ]{section}
 
 \RedeclareSectionCommand[
@@ -106,12 +126,5 @@
 \let\oldsection\section
 \renewcommand{\section}{\clearpage\oldsection}
 
-\usepackage{listings}
-
-\lstdefinestyle{ISI_code}{
-	basicstyle=\fontsize{9pt}{11pt}\selectfont\ttfamily,
-	breaklines=true,
-	keepspaces=true,
-	tabsize=4,
-	showstringspaces=false,
-}
+\usepackage{csquotes}
+\DeclareQuoteAlias{german}{lithuanian}
